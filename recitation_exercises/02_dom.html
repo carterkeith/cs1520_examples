@@ -19,6 +19,38 @@
 	 */
 	// Your code starts here
 	// End your code
+
+	/*function clickBox(){
+		document.getElementById("addButton").click();
+	}
+
+	var boxData = document.getElementsByName('theText')[0].value;*/
+
+	document.addEventListener("DOMContentLoaded", () =>{
+		document.getElementById("addButton").addEventListener("click", ()=>{
+			let msg = document.getElementById("theText").value;
+			//check for valid user input
+			if(msg){
+				//creating the div
+				let newDiv = document.createElement("div");
+				newDiv.innerText = msg;
+
+				//check color
+				if(document.getElementById("red").checked) {
+					newDiv.style.backgroundColor = "red";
+				}
+				else if(document.getElementById("green").checked) {
+					newDiv.style.backgroundColor = "green";
+				}
+				else if(document.getElementById("blue").checked) {
+					newDiv.style.backgroundColor = "blue";
+				}
+
+				document.getElementById("theForm").appendChild(newDiv);
+			}
+		})
+	})
+
 </script>
 </head>
 <body>
